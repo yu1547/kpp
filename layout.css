@@ -149,7 +149,7 @@ main {
   margin-left: auto;
 }
 .content h1{
-  background-image: url(./images/h1bg.png);
+  /* background-image: url(./images/h1bg.png); */
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
