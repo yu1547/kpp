@@ -1,0 +1,189 @@
+* {
+  /* 基本上每個網站都有 */
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background-color: rgb(239, 239, 232);
+  color: rgb(60, 34, 2);
+}
+
+/* 頁首區域 ============================ */
+header {
+  font-size: 20px;
+  float: left;
+  color: #e5d5c0;
+}
+
+header img {
+  height: 50px;
+}
+header span{
+  font-size: 20px;
+}
+
+header span {
+  letter-spacing: 10px;
+}
+
+
+/* 導覽列區域 ============================ */
+nav {
+  background-color: #768fb0;
+  text-align: center;
+  height: 100px;
+}
+
+nav a {
+  color: white;
+  /* 讓inline可以包block */
+  display: inline-block;
+  /* background-image: url(./images/btn_hover.png); */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  text-decoration: none;
+  
+  width: 120px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  /* 字體 */
+  font-family:"微軟正黑體", Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+/* 滑鼠滑入 */
+nav a:hover{
+  background-image: url(./images/btn_hover.png);
+}
+nav a.active{
+  /* background-image: url(./images/btn_hover.png); */
+  color: rgb(255, 220, 174);
+  background-color:#005c7e91;
+}
+nav a span {
+  display: block;
+}
+
+/* 橫幅圖片區域 ============================ */
+.banner {
+  text-align: center;
+  background-image: url(./images/bg_line.png);
+  background-color: #e5d5c0;
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  padding-bottom: 10px;
+
+}
+
+.banner img {
+
+  /* 圖片下方有縫的解決辦法 */
+  /* 方法一：
+    display: inline;這個顯示模式不改變的話
+    垂直置中 ,針對inline的物件使用*/
+  /* vertical-align: middle; */
+
+  /* 方法二：
+    或者直接改成block
+  */
+  display: block;
+  margin: 0 auto;
+  /* 
+  margin:四周一致;
+  margin:上下 左右;
+  margin:上 右 下 左;
+  margin:上 右左 下;
+  padding border同理
+  */
+
+}
+
+/* 中央主要內容區域 ============================ */
+main {
+  background-image: url(./images/main_bg.png);
+
+  width: 1200px;
+  /* min-height: 300px; */
+  margin: 0 auto;
+  border-left: 3px solid rgba(96, 96, 78, 0.301);
+  border-right: 3px solid rgba(96, 96, 78, 0.301);
+  box-sizing: content-box;
+  /* border: 10px;
+  border-style: solid;
+  border-color: aqua; */
+  overflow: hidden;
+}
+.content iframe{
+  width: 900px;
+  height: 400px;
+}
+/* 獨立圖片(可將圖片掛在圖片上) */
+.new{
+  width: 15%;
+  height: auto;
+  /* 將圖片獨立(父節點記得要改relative) */
+  position: absolute;
+  top: 75px;
+  right: 160px;
+
+}
+.content{
+  
+  /* background-color: #03285959; */
+  width: 950px;
+  float: left;
+  padding: 30px 20px;
+  position: relative;
+}
+.content .card{
+  width: 70%;
+  height: auto;
+}
+.content .mlauto{
+  width: 70%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+}
+.content h1{
+  background-image: url(./images/h1bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+aside{
+  /* background-color: rgba(0, 255, 255, 0.41); */
+  width: 250px;
+  float: right;
+  padding: 30px 15px;
+}
+aside h2{
+  font-size: 16px;
+  text-align: center;
+}
+
+aside img{
+  width: 100%;
+  height: auto;
+  /* 自動依原圖寬高比例調整 */
+}
+aside .THing{
+  margin: 10px 0px;
+  border: 5px solid white;
+  /* 陰影 */
+  box-shadow: 0 0 2px rgb(0, 0, 0, 0.7);
+}
+
+/* 頁首區域 ============================ */
+footer {
+  text-align: center;
+  background-image: url(./images/bg_line.png);
+  background-repeat: repeat-x;
+  padding: 1.5em 1em;
+  /*先上下後左右*/
+}
