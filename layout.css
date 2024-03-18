@@ -15,18 +15,18 @@ header {
   font-size: 20px;
   float: left;
   color: #e5d5c0;
+  letter-spacing: 5px;
 }
 
 header img {
-  height: 50px;
+  height: 70px;
 }
 header span{
-  font-size: 20px;
+  font-size: 30px;
+  letter-spacing: 20px;
 }
 
-header span {
-  letter-spacing: 10px;
-}
+
 
 
 /* 導覽列區域 ============================ */
@@ -36,7 +36,7 @@ nav {
   height: 100px;
 }
 
-nav a {
+nav a,.about {
   color: white;
   /* 讓inline可以包block */
   display: inline-block;
@@ -58,14 +58,69 @@ nav a {
 nav a:hover{
   background-image: url(./images/btn_hover.png);
 }
-nav a.active{
+nav a.active,.active{
   /* background-image: url(./images/btn_hover.png); */
   color: rgb(255, 220, 174);
   background-color:#005c7e91;
 }
-nav a span {
+nav a span,nav span button span {
   display: block;
 }
+/* 下拉式選單外框 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* 按鈕樣式 */
+#dropbtn {
+  /* background-color: #768fb0; 與導覽列背景色相符 */
+  /* color: #ffffff;  */
+  /* padding: 10px; */
+  border: none;
+  cursor: pointer;
+  font-family: "微軟正黑體", Arial, Helvetica, sans-serif; /* 使用你原本的字體 */
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* 下拉內容 */
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9; /* 與按鈕背景色相符 */
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* 滑鼠移到按鈕時顯示下拉內容 */
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+/* 下拉選項樣式 */
+.dropdownContent a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "微軟正黑體", Arial, Helvetica, sans-serif; /* 使用你原本的字體 */
+  font-size: 17px;
+}
+
+/* 滑鼠移到下拉選項時變色 */
+.dropdownContent a:hover {
+  background-color: #ece2d5; /* 與導覽列背景色相符 */
+  color: #333;
+}
+
+/* 下拉選項樣式 - 選中狀態 */
+.dropdownContent a.active {
+  background-color: #005c7e91; /* 與選中狀態的背景色相符 */
+  color: #fff4e7;
+}
+
 
 /* 橫幅圖片區域 ============================ */
 .banner {
@@ -79,26 +134,8 @@ nav a span {
 }
 
 .banner img {
-
-  /* 圖片下方有縫的解決辦法 */
-  /* 方法一：
-    display: inline;這個顯示模式不改變的話
-    垂直置中 ,針對inline的物件使用*/
-  /* vertical-align: middle; */
-
-  /* 方法二：
-    或者直接改成block
-  */
   display: block;
   margin: 0 auto;
-  /* 
-  margin:四周一致;
-  margin:上下 左右;
-  margin:上 右 下 左;
-  margin:上 右左 下;
-  padding border同理
-  */
-
 }
 
 /* 中央主要內容區域 ============================ */
@@ -106,6 +143,7 @@ main {
   background-image: url(./images/main_bg.png);
 
   width: 1200px;
+  min-height: 500px;
   /* min-height: 300px; */
   margin: 0 auto;
   border-left: 3px solid rgba(96, 96, 78, 0.301);
@@ -131,12 +169,16 @@ main {
 
 }
 .content{
-  
+  display: flex;
   /* background-color: #03285959; */
   width: 950px;
   float: left;
   padding: 30px 20px;
   position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 2em;
 }
 .content .card{
   width: 70%;
@@ -154,6 +196,30 @@ main {
   background-position: center;
   text-align: center;
   margin: 10px 0px;
+}
+
+/* Style the member list */
+.member-list {
+  list-style: none;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.member-list li {
+  margin-bottom: 10px;
+}
+
+/* Position and style the position and name */
+.position {
+  font-weight: 400;
+  color: #1a237e; /* Deep blue color */
+}
+
+.name {
+  font-weight: 700;
+  color: #4e342e; /* Deep coffee color */
 }
 
 aside{
@@ -184,6 +250,9 @@ footer {
   text-align: center;
   background-image: url(./images/bg_line.png);
   background-repeat: repeat-x;
-  padding: 1.5em 1em;
-  /*先上下後左右*/
+  padding: 1em 1em;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
